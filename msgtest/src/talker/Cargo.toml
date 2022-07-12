@@ -1,0 +1,10 @@
+[package]
+name = "talker"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+safe_drive = { path = "/root/safe_drive" }
+my_interfaces_rs = { path = "../my_interfaces_rs" }
