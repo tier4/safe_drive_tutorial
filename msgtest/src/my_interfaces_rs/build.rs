@@ -1,8 +1,6 @@
 fn main() {
     println!("cargo:rustc-link-lib=my_interfaces__rosidl_generator_c");
     println!("cargo:rustc-link-lib=my_interfaces__rosidl_typesupport_c");
-    println!("cargo:rustc-link-lib=my_interfaces__rosidl_typesupport_introspection_c");
-    println!("cargo:rustc-link-lib=my_interfaces__rosidl_typesupport_fastrtps_c");
 
     if let Some(e) = std::env::var_os("AMENT_PREFIX_PATH") {
         let env = e.to_str().unwrap();

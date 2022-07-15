@@ -7,13 +7,13 @@ fn main() -> Result<(), DynError> {
     let ctx = Context::new()?;
 
     // Create a node.
-    let node = ctx.create_node("my_talker", None, Default::default())?;
+    let node = ctx.create_node("talker", None, Default::default())?;
 
     // Create a publisher.
     let publisher = node.create_publisher::<my_interfaces::msg::MyMsgs>("my_topic", None)?;
 
     // Create a logger.
-    let logger = Logger::new("my_talker");
+    let logger = Logger::new("talker");
 
     // Create a message
     let my_msg1 = create_message()?;
