@@ -16,6 +16,7 @@ find_package(rosidl_default_generators REQUIRED)
 rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/MyMsg.msg"
   "msg/MyMsgs.msg"
+  "msg/MyMsgStr.msg"
 )
 
 if(BUILD_TESTING)

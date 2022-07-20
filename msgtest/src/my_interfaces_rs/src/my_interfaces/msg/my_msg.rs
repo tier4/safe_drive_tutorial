@@ -17,14 +17,10 @@ extern "C" {
 #[repr(C)]
 #[derive(Debug)]
 pub struct MyMsg {
-    pub message: safe_drive::msg::RosString<0>,
-    pub static_array_str: [safe_drive::msg::RosString<0>; 2],
-    pub dynamic_array_str: safe_drive::msg::RosStringSeq<0, 0>,
-    pub bounded_array_str: safe_drive::msg::RosStringSeq<0, 3>,
-    pub bounded_str: safe_drive::msg::RosString<10>,
-    pub static_array_bounded_str: [safe_drive::msg::RosString<10>; 2],
-    pub dynamic_array_bounded_str: safe_drive::msg::RosStringSeq<10, 0>,
-    pub bounded_array_bounded_str: safe_drive::msg::RosStringSeq<10, 3>,
+    pub integer_value: i32,
+    pub unbounded_integer_array: safe_drive::msg::I32Seq<0>,
+    pub five_integers_array: [i32; 5],
+    pub up_to_five_integers_array: safe_drive::msg::I32Seq<5>,
 }
 
 impl MyMsg {

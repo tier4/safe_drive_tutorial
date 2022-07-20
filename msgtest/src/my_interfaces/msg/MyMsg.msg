@@ -1,9 +1,4 @@
-string message
-string[2] static_array_str
-string[] dynamic_array_str
-string[<=3] bounded_array_str
-
-string<=10 bounded_str
-string<=10[2] static_array_bounded_str
-string<=10[] dynamic_array_bounded_str
-string<=10[<=3] bounded_array_bounded_str
+int32 integer_value
+int32[] unbounded_integer_array
+int32[5] five_integers_array
+int32[<=5] up_to_five_integers_array

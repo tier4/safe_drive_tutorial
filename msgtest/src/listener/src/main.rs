@@ -25,15 +25,21 @@ fn main() -> Result<(), DynError> {
         Box::new(move |msg| {
             let msg = &msg.msg1;
 
-            pr_info!(logger, "message: {}", msg.message);
+            pr_info!(logger, "message: {}", msg.integer_value);
 
-            for msg in msg.static_array_str.iter() {
-                pr_info!(logger, "static_array_str: {}", msg);
+            for msg in msg.five_integers_array.iter() {
+                pr_info!(logger, "five_integers_array: {}", msg);
             }
 
-            if let Some(slice) = msg.dynamic_array_str.as_slice() {
+            if let Some(slice) = msg.unbounded_integer_array.as_slice() {
                 for msg in slice {
-                    pr_info!(logger, "dynamic_array_str: {}", msg);
+                    pr_info!(logger, "unbounded_integer_array: {}", msg);
+                }
+            }
+
+            if let Some(slice) = msg.up_to_five_integers_array.as_slice() {
+                for msg in slice {
+                    pr_info!(logger, "up_to_five_integers_array: {}", msg);
                 }
             }
         }),

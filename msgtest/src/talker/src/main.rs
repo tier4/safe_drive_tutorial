@@ -1,5 +1,11 @@
 use my_interfaces_rs::my_interfaces;
-use safe_drive::{context::Context, error::DynError, logger::Logger, msg::RosStringSeq, pr_info};
+use safe_drive::{
+    context::Context,
+    error::DynError,
+    logger::Logger,
+    msg::{I32Seq, RosStringSeq},
+    pr_info,
+};
 use std::time::Duration;
 
 fn main() -> Result<(), DynError> {
@@ -35,6 +41,36 @@ fn main() -> Result<(), DynError> {
 
 fn create_message() -> Result<my_interfaces::msg::MyMsg, DynError> {
     let mut my_msg = my_interfaces::msg::MyMsg::new().unwrap();
+
+    my_msg.integer_value = 10;
+
+    // int32[5] five_integers_array
+    my_msg.five_integers_array[0] = 11;
+    my_msg.five_integers_array[1] = 13;
+    my_msg.five_integers_array[2] = 49;
+    my_msg.five_integers_array[3] = 55;
+    my_msg.five_integers_array[4] = 19;
+
+    // int32[] unbounded_integer_array
+    let mut msgs = I32Seq::new(3).unwrap();
+    let ref_msgs = msgs.as_slice_mut().unwrap();
+    ref_msgs[0] = 6;
+    ref_msgs[1] = 7;
+    ref_msgs[2] = 8;
+    my_msg.unbounded_integer_array = msgs;
+
+    // int32[<=5] up_to_five_integers_array
+    let mut msgs = I32Seq::new(2).unwrap();
+    let ref_msgs = msgs.as_slice_mut().unwrap();
+    ref_msgs[0] = 2;
+    ref_msgs[1] = 3;
+    my_msg.up_to_five_integers_array = msgs;
+
+    Ok(my_msg)
+}
+
+fn _create_message_str() -> Result<my_interfaces::msg::MyMsgStr, DynError> {
+    let mut my_msg = my_interfaces::msg::MyMsgStr::new().unwrap();
 
     // string message
     my_msg.message.assign("Hello, World!");
