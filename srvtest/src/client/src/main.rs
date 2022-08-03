@@ -16,8 +16,12 @@ async fn main() -> Result<(), DynError> {
     // Create a client.
     let mut client = node.create_client::<AddTwoInts>("my_service", Some(Profile::default()))?;
 
+    let mut n = 0;
     loop {
-        let request = AddTwoIntsRequest::new().unwrap();
+        let mut request = AddTwoIntsRequest::new().unwrap();
+        request.x = n;
+        request.y = n + 1;
+        n += 1;
 
         // Send a request.
         let client_rcv = client.send(&request)?;
@@ -35,9 +39,11 @@ async fn main() -> Result<(), DynError> {
                 return Err(e);
             }
             Err(elapsed) => {
-                pr_warn!(logger, "timeout: elapsed = {elapsed}");
+                pr_warn!(logger, "timeout: {elapsed}");
                 client = receiver.give_up();
             }
         }
+
+        tokio::time::sleep(Duration::from_secs(1)).await;
     }
 }
