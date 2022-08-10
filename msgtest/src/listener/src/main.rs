@@ -31,19 +31,16 @@ fn main() -> Result<(), DynError> {
                 pr_info!(logger, "five_integers_array: {}", msg);
             }
 
-            if let Some(slice) = msg.unbounded_integer_array.as_slice() {
-                for msg in slice {
-                    pr_info!(logger, "unbounded_integer_array: {}", msg);
-                }
+            let slice = msg.unbounded_integer_array.as_slice();
+            for msg in slice {
+                pr_info!(logger, "unbounded_integer_array: {}", msg);
             }
 
-            if let Some(slice) = msg.up_to_five_integers_array.as_slice() {
-                for msg in slice {
-                    pr_info!(logger, "up_to_five_integers_array: {}", msg);
-                }
+            let slice = msg.up_to_five_integers_array.as_slice();
+            for msg in slice {
+                pr_info!(logger, "up_to_five_integers_array: {}", msg);
             }
         }),
-        false,
     );
 
     // Spin.
