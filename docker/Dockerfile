@@ -22,9 +22,9 @@ RUN apt-get -y update && \
 
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 RUN . /root/.cargo/env && \
-    cargo install --debug cargo-ament-build
+    cargo install --git https://github.com/tier4/cargo-ament-build.git
 
-RUN pip install git+https://github.com/colcon/colcon-cargo.git && \
+RUN pip install git+https://github.com/tier4/colcon-cargo.git && \
     pip install git+https://github.com/colcon/colcon-ros-cargo.git
 
 COPY zshenv /root/.zshenv

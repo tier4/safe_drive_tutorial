@@ -1,0 +1,2 @@
+[workspace]
+members = ["my_interfaces_rs", "talker", "listener"]
