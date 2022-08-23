@@ -5,7 +5,7 @@
   <version>0.0.0</version>
   <description>Protocol Definition in Rust</description>
   <maintainer email="yuuki.takano@tier4.jp">Yuuki Takano</maintainer>
-  <license>TODO: License declaration</license>
+  <license>Apache License 2.0</license>
 
   <test_depend>ament_lint_auto</test_depend>
   <test_depend>ament_lint_common</test_depend>
