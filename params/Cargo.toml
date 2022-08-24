@@ -1,0 +1,2 @@
+[workspace]
+members = ["param_server", "async_param_server"]
