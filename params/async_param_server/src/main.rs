@@ -1,10 +1,4 @@
-use safe_drive::{
-    context::Context,
-    error::DynError,
-    logger::Logger,
-    parameter::{ParameterServer, Value},
-    pr_info,
-};
+use safe_drive::{context::Context, error::DynError, logger::Logger, parameter::Value, pr_info};
 
 #[tokio::main]
 async fn main() -> Result<(), DynError> {
@@ -13,7 +7,7 @@ async fn main() -> Result<(), DynError> {
     let node = ctx.create_node("async_param_server", None, Default::default())?;
 
     // Create a parameter server.
-    let mut param_server = ParameterServer::new(node)?;
+    let mut param_server = node.create_parameter_server()?;
     {
         // Set parameters.
         let mut params = param_server.params.write(); // Write lock
