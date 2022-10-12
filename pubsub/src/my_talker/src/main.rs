@@ -1,6 +1,4 @@
-use safe_drive::{
-    context::Context, error::DynError, logger::Logger, msg::common_interfaces::std_msgs, pr_info,
-};
+use safe_drive::{context::Context, error::DynError, logger::Logger, pr_info};
 use std::time::Duration;
 
 fn main() -> Result<(), DynError> {
