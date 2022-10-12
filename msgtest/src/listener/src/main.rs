@@ -1,4 +1,3 @@
-use my_interfaces_rs::my_interfaces;
 use safe_drive::{context::Context, error::DynError, logger::Logger, pr_info};
 
 fn main() -> Result<(), DynError> {
@@ -31,13 +30,11 @@ fn main() -> Result<(), DynError> {
                 pr_info!(logger, "five_integers_array: {}", msg);
             }
 
-            let slice = msg.unbounded_integer_array.as_slice();
-            for msg in slice {
+            for msg in msg.unbounded_integer_array.iter() {
                 pr_info!(logger, "unbounded_integer_array: {}", msg);
             }
 
-            let slice = msg.up_to_five_integers_array.as_slice();
-            for msg in slice {
+            for msg in msg.up_to_five_integers_array.iter() {
                 pr_info!(logger, "up_to_five_integers_array: {}", msg);
             }
         }),

@@ -1,4 +1,4 @@
-use safe_drive::{context::Context, error::DynError, msg::common_interfaces::std_msgs};
+use safe_drive::{context::Context, error::DynError};
 use std::time::Duration;
 
 #[async_std::main]

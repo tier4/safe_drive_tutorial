@@ -1,6 +1,5 @@
 use safe_drive::{
-    context::Context, error::DynError, logger::Logger, msg::common_interfaces::std_msgs, pr_info,
-    topic::subscriber::Subscriber,
+    context::Context, error::DynError, logger::Logger, pr_info, topic::subscriber::Subscriber,
 };
 
 #[async_std::main]
