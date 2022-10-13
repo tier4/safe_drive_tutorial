@@ -1,5 +1,5 @@
 use safe_drive::{context::Context, error::DynError, logger::Logger, pr_error, qos::Profile};
-use srvmsg_rs::srvmsg::srv::{AddTwoInts, AddTwoIntsResponse};
+use srvmsg::srv::{AddTwoInts, AddTwoIntsResponse};
 
 fn main() -> Result<(), DynError> {
     // Create a context.

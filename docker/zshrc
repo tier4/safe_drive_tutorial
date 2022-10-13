@@ -43,7 +43,7 @@ precmd () {
 
 # show git's version
 export TERM=xterm
-export PROMPT="%n@Ubuntu20.04 %#> "
+export PROMPT="%n %#> "
 export RPROMPT='[%~]'
 export HISTFILE=$HOME/.zsh_history
 export HISTSIZE=10000

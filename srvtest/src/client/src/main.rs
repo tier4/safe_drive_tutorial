@@ -1,7 +1,7 @@
 use safe_drive::{
     context::Context, error::DynError, logger::Logger, pr_error, pr_info, pr_warn, qos::Profile,
 };
-use srvmsg_rs::srvmsg::srv::{AddTwoInts, AddTwoIntsRequest};
+use srvmsg::srv::{AddTwoInts, AddTwoIntsRequest};
 use std::time::Duration;
 use tokio::time::timeout;
 

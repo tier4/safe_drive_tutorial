@@ -1,2 +1,2 @@
 [workspace]
-members = ["srvmsg_rs", "client", "server"]
+members = ["client", "server"]
