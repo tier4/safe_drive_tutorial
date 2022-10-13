@@ -6,5 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-safe_drive = { path = "/home/yuukitakano/program/safe_drive" }
+safe_drive = { path = "/tmp/safe_drive", default-features = false, features = ["galactic"] }
 tokio = { version = "1", features = ["full"] }
