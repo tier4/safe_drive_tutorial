@@ -6,10 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-safe_drive = { path = "/tmp/safe_drive", default-features = false, features = ["galactic"] }
+safe_drive = "0.1"
 my_interfaces = { path = "/tmp/safe_drive_tutorial/msgtest/my_interfaces" }
 
 [package.metadata.ros]
 msg = ["my_interfaces"]
 msg_dir = "/tmp/safe_drive_tutorial/msgtest"
-safe_drive_path = "/tmp/safe_drive"
+safe_drive_version = "0.1"

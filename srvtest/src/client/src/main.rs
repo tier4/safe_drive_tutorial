@@ -1,7 +1,7 @@
 use safe_drive::{
     context::Context, error::DynError, logger::Logger, pr_error, pr_info, pr_warn, qos::Profile,
 };
-use srvmsg::srv::{AddTwoInts, AddTwoIntsRequest};
+use srvmsg::srv::{AddTwoInts, AddTwoInts_Request};
 use std::time::Duration;
 use tokio::time::timeout;
 
@@ -18,7 +18,7 @@ async fn main() -> Result<(), DynError> {
 
     let mut n = 0;
     loop {
-        let mut request = AddTwoIntsRequest::new().unwrap();
+        let mut request = AddTwoInts_Request::new().unwrap();
         request.x = n;
         request.y = n + 1;
         n += 1;

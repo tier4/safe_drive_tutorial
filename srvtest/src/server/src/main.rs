@@ -1,5 +1,5 @@
 use safe_drive::{context::Context, error::DynError, logger::Logger, pr_error, qos::Profile};
-use srvmsg::srv::{AddTwoInts, AddTwoIntsResponse};
+use srvmsg::srv::{AddTwoInts, AddTwoInts_Response};
 
 fn main() -> Result<(), DynError> {
     // Create a context.
@@ -20,7 +20,7 @@ fn main() -> Result<(), DynError> {
     selector.add_server(
         server,
         Box::new(move |msg, _header| {
-            let mut response = AddTwoIntsResponse::new().unwrap();
+            let mut response = AddTwoInts_Response::new().unwrap();
             pr_error!(logger, "recv: {:?}", msg);
             response.result = msg.x + msg.y;
             response
