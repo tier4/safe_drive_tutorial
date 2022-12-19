@@ -1,0 +1,11 @@
+[package]
+name = "requester"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+safe_drive = { version = "0.1", features = ["custom_alloc"] }
+memac = "0.5"
+libc = "0.2"
