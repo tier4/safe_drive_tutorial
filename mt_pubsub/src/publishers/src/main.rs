@@ -8,8 +8,8 @@ async fn main() -> Result<(), DynError> {
     let node = ctx.create_node("publishers", None, Default::default())?;
 
     // Create publishers.
-    let publisher1 = node.create_publisher::<std_msgs::msg::String>("topic1", None)?;
-    let publisher2 = node.create_publisher::<std_msgs::msg::String>("topic2", None)?;
+    let publisher1 = node.create_publisher::<std_msgs::msg::String>("topic1", None, true)?;
+    let publisher2 = node.create_publisher::<std_msgs::msg::String>("topic2", None, true)?;
 
     // Create a task which sends "Hello, World!".
     let task1 = async_std::task::spawn(async move {

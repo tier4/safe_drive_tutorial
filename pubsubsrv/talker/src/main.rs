@@ -9,7 +9,7 @@ fn main() -> Result<(), DynError> {
     let node = ctx.create_node("pubsubsrv_talker", None, Default::default())?;
 
     // Create a publisher.
-    let publisher = node.create_publisher::<std_msgs::msg::Empty>("pubsubsrv_topic", None)?;
+    let publisher = node.create_publisher::<std_msgs::msg::Empty>("pubsubsrv_topic", None, true)?;
 
     let msg = std_msgs::msg::Empty::new().unwrap();
     loop {

@@ -9,8 +9,8 @@ async fn main() -> Result<(), DynError> {
     let node = ctx.create_node("subscribers", None, Default::default())?;
 
     // Create subscribers.
-    let subscriber1 = node.create_subscriber::<std_msgs::msg::String>("topic1", None)?;
-    let subscriber2 = node.create_subscriber::<std_msgs::msg::String>("topic2", None)?;
+    let subscriber1 = node.create_subscriber::<std_msgs::msg::String>("topic1", None, true)?;
+    let subscriber2 = node.create_subscriber::<std_msgs::msg::String>("topic2", None, true)?;
 
     // Receive messages.
     let task1 = async_std::task::spawn(receiver(subscriber1));

@@ -9,7 +9,7 @@ fn main() -> Result<(), DynError> {
     let node = ctx.create_node("my_talker", None, Default::default())?;
 
     // Create a publisher.
-    let publisher = node.create_publisher::<std_msgs::msg::String>("my_topic", None)?;
+    let publisher = node.create_publisher::<std_msgs::msg::String>("my_topic", None, true)?;
 
     // Create a logger.
     let logger = Logger::new("my_talker");
