@@ -8,7 +8,8 @@ fn main() -> Result<(), DynError> {
     let node = ctx.create_node("listener", None, Default::default())?;
 
     // Create a subscriber.
-    let subscriber = node.create_subscriber::<my_interfaces::msg::MyMsgs>("my_topic", None)?;
+    let subscriber =
+        node.create_subscriber::<my_interfaces::msg::MyMsgs>("my_topic", None, true)?;
 
     // Create a logger.
     let logger = Logger::new("listener");
