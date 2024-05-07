@@ -9,7 +9,7 @@ fn main() -> Result<(), DynError> {
 
     // Create a subscriber.
     let subscriber =
-        node.create_subscriber::<my_interfaces::msg::MyMsgs>("my_topic", None, true)?;
+        node.create_subscriber::<my_interfaces::msg::MyMsgs>("my_topic", None)?;
 
     // Create a logger.
     let logger = Logger::new("listener");

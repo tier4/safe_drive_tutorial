@@ -15,7 +15,7 @@ fn main() -> Result<(), DynError> {
     let node = ctx.create_node("talker", None, Default::default())?;
 
     // Create a publisher.
-    let publisher = node.create_publisher::<my_interfaces::msg::MyMsgs>("my_topic", None, true)?;
+    let publisher = node.create_publisher::<my_interfaces::msg::MyMsgs>("my_topic", None)?;
 
     // Create a logger.
     let logger = Logger::new("talker");
@@ -59,10 +59,13 @@ fn create_message() -> Result<my_interfaces::msg::MyMsg, DynError> {
     my_msg.unbounded_integer_array = msgs;
 
     // int32[<=5] up_to_five_integers_array
-    let mut msgs = I32Seq::new(2).unwrap();
+    let mut msgs = I32Seq::new(5).unwrap();
     let ref_msgs = msgs.as_slice_mut();
-    ref_msgs[0] = 2;
-    ref_msgs[1] = 3;
+    ref_msgs[0] = 10;
+    ref_msgs[1] = 11;
+    ref_msgs[2] = 12;
+    ref_msgs[3] = 13;
+    ref_msgs[4] = 14;
     my_msg.up_to_five_integers_array = msgs;
 
     Ok(my_msg)
